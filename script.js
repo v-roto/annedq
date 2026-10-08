@@ -99,7 +99,7 @@ if (contactForm && formMsg) {
         const message = document.getElementById('message').value.trim();
 
         if (name && email && message) {
-            formMsg.textContent = `¡Gracias, ${name}! Tu mensaje ha sido enviado exitosamente.`;
+            formMsg.textContent = `Thank you, ${name}! Your message has been sent successfully.`;
             formMsg.className = 'form-msg success';
             contactForm.reset();
 
