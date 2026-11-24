@@ -1,0 +1,4 @@
+# Affinity working files (145 MB: over GitHub's 100 MB limit)
+*.af
+*.af~lock~
+uploads/draft.pdf

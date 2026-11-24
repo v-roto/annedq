@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anne De Quevedo - Concept Art & Illustration</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Lato:wght@400;700&display=swap">
+    <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
     <header class="hero">
@@ -16,7 +19,7 @@
                 <li><a href="#illustrations">Illustrations</a></li>
                 <li><a href="#characters">Characters</a></li>
                 <li><a href="javascript:void(0);" id="about-nav-btn">About Me</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="contact-open">Contact</a></li>
             </ul>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -33,7 +36,7 @@
     </header>
 
     <!-- Software Marquee Ribbon (Using actual SVG image files from uploads/Icons) -->
-    <div class="marquee-container">
+    <div class="marquee-container" data-speed="35">
         <div class="marquee-track">
             <div class="marquee-item"><img src="uploads/Icons/blender-svgrepo-com.svg" alt="Blender"></div>
             <div class="marquee-item"><img src="uploads/Icons/photoshop-svgrepo-com.svg" alt="Photoshop"></div>
@@ -41,179 +44,150 @@
             <div class="marquee-item"><img src="uploads/Icons/Procreate.svg" alt="Procreate"></div>
             <div class="marquee-item"><img src="uploads/Icons/GURPS.svg" alt="GURPS" class="icon-lg"></div>
             <div class="marquee-item"><img src="uploads/Icons/animex.svg" alt="Animex" class="icon-lg"></div>
-            <!-- Duplicate for infinite seamless scroll -->
-            <div class="marquee-item"><img src="uploads/Icons/blender-svgrepo-com.svg" alt="Blender"></div>
-            <div class="marquee-item"><img src="uploads/Icons/photoshop-svgrepo-com.svg" alt="Photoshop"></div>
-            <div class="marquee-item"><img src="uploads/Icons/Substance.svg" alt="Substance"></div>
-            <div class="marquee-item"><img src="uploads/Icons/Procreate.svg" alt="Procreate"></div>
-            <div class="marquee-item"><img src="uploads/Icons/GURPS.svg" alt="GURPS" class="icon-lg"></div>
-            <div class="marquee-item"><img src="uploads/Icons/animex.svg" alt="Animex" class="icon-lg"></div>
+            <!-- script.js clones these as many times as needed for a seamless loop -->
         </div>
     </div>
 
     <main>
-        <!-- Concept Art Section -->
-        <section id="concept-art" class="section">
+        <!-- Concept Art -->
+        <section id="concept-art" class="section section--banner">
+            <header class="section-banner" data-full="uploads/web/banner.jpg">
+                <img src="uploads/web/banner.jpg" alt="Mushroom forest bridge environment">
+                <div class="section-banner__text">
+                    <h2>Concept Art</h2>
+                    <p class="section-subtitle">Visual exploration, worlds, and conceptual design.</p>
+                </div>
+            </header>
             <div class="container">
-                <h2>Concept Art</h2>
-                <p class="section-subtitle">Visual exploration, worlds, and conceptual design.</p>
-                <div class="portfolio-grid concept-grid">
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Concept art/IMG_2581.PNG')">
-                        <img src="uploads/Portfolio 2026/Concept art/IMG_2581.PNG" alt="Spider-Man Concept Art">
-                        <div class="portfolio-overlay"><span>View</span></div>
+                <div class="gallery">
+
+                    <figure class="art reveal" data-full="uploads/web/bosque.jpg" data-reveal="uploads/web/bosque-boceto.jpg"><img src="uploads/web/bosque.jpg" alt="Girl with a lantern meeting a forest creature" loading="lazy"></figure>
+                    <div class="row row-2">
+                        <figure class="art" data-full="uploads/web/bosque-color-1.jpg"><img src="uploads/web/bosque-color-1.jpg" alt="Color study, green light" loading="lazy"></figure>
+                        <figure class="art" data-full="uploads/web/bosque-color-2.jpg"><img src="uploads/web/bosque-color-2.jpg" alt="Color study, pink light" loading="lazy"></figure>
                     </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Concept art/IMG_2556.PNG')">
-                        <img src="uploads/Portfolio 2026/Concept art/IMG_2556.PNG" alt="Concept Art">
-                        <div class="portfolio-overlay"><span>View</span></div>
+
+                    <figure class="art reveal" data-full="uploads/web/ciudad.jpg" data-reveal="uploads/web/ciudad-boceto.jpg"><img src="uploads/web/ciudad.jpg" alt="Spider-Man city environment" loading="lazy"></figure>
+                    <div class="row row-ciudad">
+                        <figure class="art" data-full="uploads/web/ciudad-color-1.jpg"><img src="uploads/web/ciudad-color-1.jpg" alt="City color studies" loading="lazy"></figure>
+                        <figure class="art" data-full="uploads/web/ciudad-color-2.jpg"><img src="uploads/web/ciudad-color-2.jpg" alt="City color study" loading="lazy"></figure>
                     </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Concept art/IMG_2528.PNG')">
-                        <img src="uploads/Portfolio 2026/Concept art/IMG_2528.PNG" alt="Concept Art">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Concept art/IMG_2521.PNG')">
-                        <img src="uploads/Portfolio 2026/Concept art/IMG_2521.PNG" alt="Concept Art">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Concept art/IMG_2520.PNG')">
-                        <img src="uploads/Portfolio 2026/Concept art/IMG_2520.PNG" alt="Concept Art">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Concept art/hdri final 2.png')">
-                        <img src="uploads/Portfolio 2026/Concept art/hdri final 2.png" alt="Concept Art">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Concept art/IMG_2589.PNG')">
-                        <img src="uploads/Portfolio 2026/Concept art/IMG_2589.PNG" alt="Concept Art">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Concept art/IMG_2559.PNG')">
-                        <img src="uploads/Portfolio 2026/Concept art/IMG_2559.PNG" alt="Concept Art">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Concept art/IMG_2599.PNG')">
-                        <img src="uploads/Portfolio 2026/Concept art/IMG_2599.PNG" alt="Concept Art">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Concept art/IMG_2600.PNG')">
-                        <img src="uploads/Portfolio 2026/Concept art/IMG_2600.PNG" alt="Concept Art">
-                        <div class="portfolio-overlay"><span>View</span></div>
+
+                    <div class="house">
+                        <figure class="art house-main" data-full="uploads/web/casita.jpg"><img src="uploads/web/casita.jpg" alt="Gingerbread house exterior" loading="lazy"></figure>
+                        <figure class="art house-cutout house-color" data-full="uploads/web/casita-interior.webp"><img src="uploads/web/casita-interior.webp" alt="Gingerbread house interior, isometric" loading="lazy"></figure>
+                        <figure class="art house-cutout house-sketch" data-full="uploads/web/casita-interior-boceto.webp"><img src="uploads/web/casita-interior-boceto.webp" alt="Gingerbread house interior sketch" loading="lazy"></figure>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Illustrations Section -->
+        <!-- Illustrations -->
         <section id="illustrations" class="section bg-light">
             <div class="container">
                 <h2>Illustrations</h2>
                 <p class="section-subtitle">Digital illustrations, splasharts, and boundless imagination.</p>
-                <div class="portfolio-grid illustration-grid">
-                    <!-- Splasharts first -->
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Splasharts/Lumina Splashart.JPEG')">
-                        <img src="uploads/Portfolio 2026/Splasharts/Lumina Splashart.JPEG" alt="Lumina Splashart">
-                        <div class="portfolio-overlay"><span>View</span></div>
+                <div class="gallery">
+                    <figure class="art reveal" data-full="uploads/web/lumina.jpg" data-reveal="uploads/web/lumina-boceto.jpg"><img src="uploads/web/lumina.jpg" alt="Lumina splashart" loading="lazy"></figure>
+                    <div class="row row-3">
+                        <figure class="art" data-full="uploads/web/poses-1.jpg"><img src="uploads/web/poses-1.jpg" alt="Pose exploration sketch 1" loading="lazy"></figure>
+                        <figure class="art" data-full="uploads/web/poses-2.jpg"><img src="uploads/web/poses-2.jpg" alt="Pose exploration sketch 2" loading="lazy"></figure>
+                        <figure class="art" data-full="uploads/web/poses-3.jpg"><img src="uploads/web/poses-3.jpg" alt="Pose exploration sketch 3" loading="lazy"></figure>
                     </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Splasharts/IMG_2203.PNG')">
-                        <img src="uploads/Portfolio 2026/Splasharts/IMG_2203.PNG" alt="Splashart">
-                        <div class="portfolio-overlay"><span>View</span></div>
+
+                    <div class="split split--zooms-left">
+                        <div class="zooms">
+                            <figure class="art" data-full="uploads/web/luna.jpg"><img src="uploads/web/luna-rostro.jpg" alt="Moon elf, face detail" loading="lazy"></figure>
+                            <figure class="art" data-full="uploads/web/luna.jpg"><img src="uploads/web/luna-detalle.jpg" alt="Moon elf, hand and gold detail" loading="lazy"></figure>
+                        </div>
+                        <figure class="art split-main" data-full="uploads/web/luna.jpg"><img src="uploads/web/luna.jpg" alt="Moon elf portrait" loading="lazy"></figure>
                     </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Splasharts/IMG_0227.PNG')">
-                        <img src="uploads/Portfolio 2026/Splasharts/IMG_0227.PNG" alt="Splashart">
-                        <div class="portfolio-overlay"><span>View</span></div>
+
+                    <figure class="art" data-full="uploads/web/cocina.jpg"><img src="uploads/web/cocina.jpg" alt="Woman sitting on a kitchen counter" loading="lazy"></figure>
+
+                    <div class="split">
+                        <figure class="art split-main" data-full="uploads/web/orbe.jpg"><img src="uploads/web/orbe.jpg" alt="Blue elf holding a glowing orb" loading="lazy"></figure>
+                        <div class="zooms">
+                            <figure class="art" data-full="uploads/web/orbe.jpg"><img src="uploads/web/orbe-rostro.jpg" alt="Blue elf, face detail" loading="lazy"></figure>
+                            <figure class="art" data-full="uploads/web/orbe.jpg"><img src="uploads/web/orbe-detalle.jpg" alt="Blue elf, orb detail" loading="lazy"></figure>
+                        </div>
                     </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Splasharts/DB55CB09-66EA-4425-A128-E033426C16CD.JPEG')">
-                        <img src="uploads/Portfolio 2026/Splasharts/DB55CB09-66EA-4425-A128-E033426C16CD.JPEG" alt="Splashart">
-                        <div class="portfolio-overlay"><span>View</span></div>
+                    <div class="row row-2">
+                        <figure class="art" data-full="uploads/web/valores-1.jpg"><img src="uploads/web/valores-1.jpg" alt="Value thumbnails 1 and 2" loading="lazy"></figure>
+                        <figure class="art" data-full="uploads/web/valores-2.jpg"><img src="uploads/web/valores-2.jpg" alt="Value thumbnails 3 and 4" loading="lazy"></figure>
                     </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Splasharts/Akila thumbnails.png')">
-                        <img src="uploads/Portfolio 2026/Splasharts/Akila thumbnails.png" alt="Akila thumbnails">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <!-- Illustrations -->
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Ilustraciones/IMG_2998.PNG')">
-                        <img src="uploads/Portfolio 2026/Ilustraciones/IMG_2998.PNG" alt="Illustration">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Ilustraciones/IMG_1740.PNG')">
-                        <img src="uploads/Portfolio 2026/Ilustraciones/IMG_1740.PNG" alt="Illustration">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Ilustraciones/IMG_0160.PNG')">
-                        <img src="uploads/Portfolio 2026/Ilustraciones/IMG_0160.PNG" alt="Illustration">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Ilustraciones/D9F744F6-6EB1-4E58-A993-2A2CF1C3448A.jpeg')">
-                        <img src="uploads/Portfolio 2026/Ilustraciones/D9F744F6-6EB1-4E58-A993-2A2CF1C3448A.jpeg" alt="Illustration">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Ilustraciones/commission zelda.png')">
-                        <img src="uploads/Portfolio 2026/Ilustraciones/commission zelda.png" alt="Commission Zelda">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Ilustraciones/3C640200-E643-4D03-BE83-E931E7CA383F.jpeg')">
-                        <img src="uploads/Portfolio 2026/Ilustraciones/3C640200-E643-4D03-BE83-E931E7CA383F.jpeg" alt="Illustration">
-                        <div class="portfolio-overlay"><span>View</span></div>
+
+                    <figure class="art" data-full="uploads/web/abrigo.jpg"><img src="uploads/web/abrigo.jpg" alt="Girl in a green coat resting on a table" loading="lazy"></figure>
+                    <figure class="art" data-full="uploads/web/zelda.jpg"><img src="uploads/web/zelda.jpg" alt="Commission: princess fallen on a bed" loading="lazy"></figure>
+                    <div class="row row-final">
+                        <figure class="art" data-full="uploads/web/princesa.jpg"><img src="uploads/web/princesa.jpg" alt="Princess with purple hair" loading="lazy"></figure>
+                        <figure class="art" data-full="uploads/web/rojo.jpg"><img src="uploads/web/rojo.jpg" alt="Girl sitting on a red background" loading="lazy"></figure>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Characters Section -->
+        <!-- Characters -->
         <section id="characters" class="section">
             <div class="container">
                 <h2>Characters</h2>
                 <p class="section-subtitle">Character design, turnarounds, and expressions.</p>
-                <div class="portfolio-grid character-grid">
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Character design/diseño de personsjes.png')">
-                        <img src="uploads/Portfolio 2026/Character design/diseño de personsjes.png" alt="Character Design">
-                        <div class="portfolio-overlay"><span>View</span></div>
+                <div class="marquee-container sketch-marquee" data-speed="45" aria-label="Construction sketches and silhouettes">
+                    <div class="marquee-track">
+                        <div class="marquee-item sketch-item"><img src="uploads/Portfolio 2026/Character design/bocetos/boceto-01.png" alt="Character construction sketch and silhouette 1"></div>
+                        <div class="marquee-item sketch-item"><img src="uploads/Portfolio 2026/Character design/bocetos/boceto-02.png" alt="Character construction sketch and silhouette 2"></div>
+                        <div class="marquee-item sketch-item"><img src="uploads/Portfolio 2026/Character design/bocetos/boceto-03.png" alt="Character construction sketch and silhouette 3"></div>
+                        <div class="marquee-item sketch-item"><img src="uploads/Portfolio 2026/Character design/bocetos/boceto-04.png" alt="Character construction sketch and silhouette 4"></div>
+                        <div class="marquee-item sketch-item"><img src="uploads/Portfolio 2026/Character design/bocetos/boceto-05.png" alt="Character construction sketch and silhouette 5"></div>
+                        <div class="marquee-item sketch-item"><img src="uploads/Portfolio 2026/Character design/bocetos/boceto-06.png" alt="Character construction sketch and silhouette 6"></div>
+                        <div class="marquee-item sketch-item"><img src="uploads/Portfolio 2026/Character design/bocetos/boceto-07.png" alt="Character construction sketch and silhouette 7"></div>
+                        <div class="marquee-item sketch-item"><img src="uploads/Portfolio 2026/Character design/bocetos/boceto-08.png" alt="Character construction sketch and silhouette 8"></div>
+                        <div class="marquee-item sketch-item"><img src="uploads/Portfolio 2026/Character design/bocetos/boceto-09.png" alt="Character construction sketch and silhouette 9"></div>
+                        <div class="marquee-item sketch-item"><img src="uploads/Portfolio 2026/Character design/bocetos/boceto-10.png" alt="Character construction sketch and silhouette 10"></div>
                     </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Character design/furros entrega 2.png')">
-                        <img src="uploads/Portfolio 2026/Character design/furros entrega 2.png" alt="Character">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Character design/turnAround.PNG')">
-                        <img src="uploads/Portfolio 2026/Character design/turnAround.PNG" alt="Turnaround">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
-                    <div class="portfolio-item" onclick="openLightbox('uploads/Portfolio 2026/Character design/Apicultor.PNG')">
-                        <img src="uploads/Portfolio 2026/Character design/Apicultor.PNG" alt="Beekeeper">
-                        <div class="portfolio-overlay"><span>View</span></div>
-                    </div>
+                </div>
+                <div class="gallery">
+                    <figure class="art" data-full="uploads/web/furros.jpg"><img src="uploads/web/furros.jpg" alt="Character sheet" loading="lazy"></figure>
+                    <figure class="art" data-full="uploads/web/turnaround.jpg"><img src="uploads/web/turnaround.jpg" alt="Character turnaround" loading="lazy"></figure>
+                    <figure class="art narrow" data-full="uploads/web/apicultor.jpg"><img src="uploads/web/apicultor.jpg" alt="Beekeeper character" loading="lazy"></figure>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section bg-light">
+        <!-- Contact (bottom of the page) -->
+        <section id="contact" class="section bg-light contact-section">
             <div class="container">
-                <div class="floating-card">
-                    <h2>Get in Touch</h2>
-                    <p class="section-subtitle">Interested in collaborations, commissions, or projects?</p>
-                    
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/anne_de_quevedo" target="_blank" class="social-btn instagram">Instagram</a>
-                        <a href="https://vgen.co/AnneDQ11" target="_blank" class="social-btn vgen">VGen</a>
-                        <a href="https://www.artstation.com/annedq" target="_blank" class="social-btn artstation">ArtStation</a>
-                        <a href="https://www.tiktok.com/@anne_de_quevedo" target="_blank" class="social-btn tiktok">TikTok</a>
-                    </div>
+                <div class="contact-card" id="contact-card">
+                <h2>Get in Touch</h2>
+                <p class="section-subtitle">Interested in collaborations, commissions, or projects?</p>
 
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" required placeholder="Your name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" required placeholder="you@email.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message:</label>
-                            <textarea id="message" rows="4" required placeholder="How can we collaborate?"></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                    <div id="form-msg" class="form-msg hidden"></div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/anne_de_quevedo" target="_blank" rel="noopener" class="social-btn instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg><span>Instagram</span></a>
+                    <a href="https://vgen.co/AnneDQ11" target="_blank" rel="noopener" class="social-btn vgen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5l8 14 8-14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>VGen</span></a>
+                    <a href="https://www.artstation.com/annedq" target="_blank" rel="noopener" class="social-btn artstation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17h11.5l2.3 4H4.3z M8.5 4h5l8.5 14.7-2.5 2.8z M7 15l3.2-5.6 3.2 5.6z" fill="currentColor"/></svg><span>ArtStation</span></a>
+                    <a href="https://www.tiktok.com/@anne_de_quevedo" target="_blank" rel="noopener" class="social-btn tiktok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.8a3.8 3.8 0 1 1-3.8-3.8 M14 3c.4 2.6 2.4 4.4 5 4.6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>TikTok</span></a>
+                    <a href="#contact" class="social-btn email" data-mail><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Email</span></a>
+                </div>
+
+                <!-- Provisional: with no data-endpoint the form opens the visitor's email
+                     app addressed to the email built in script.js. Later, set data-endpoint
+                     to a Formspree URL (https://formspree.io/f/xxxx) to send directly. -->
+                <form id="contact-form" class="contact-form" data-endpoint="">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="you@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="How can we collaborate?"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                <div id="form-msg" class="form-msg hidden"></div>
                 </div>
             </div>
         </section>
@@ -230,10 +204,23 @@
                 <p style="margin-top: 1rem;">I am always open to new creative challenges, commissions, and projects in the entertainment, video game, and tabletop RPG industries.</p>
             </div>
             <div class="about-actions" style="margin-top: 2.5rem; text-align: center;">
-                <a href="#contact" class="btn" id="modal-contact-btn">Contact Me</a>
+                <a href="javascript:void(0);" class="btn contact-open" id="modal-contact-btn">Contact Me</a>
             </div>
         </div>
     </div>
+
+    <!-- Contact Modal: script.js moves the contact card in here while open -->
+    <div id="contact-modal" class="modal-overlay">
+        <div class="modal-card contact-modal-card">
+            <span class="modal-close" data-close>&times;</span>
+        </div>
+    </div>
+
+    <!-- Always-visible contact button -->
+    <button type="button" class="contact-fab contact-open" aria-label="Contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span>Contact</span>
+    </button>
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
@@ -245,6 +232,6 @@
         <p>&copy; <span id="current-year"></span> Anne De Quevedo. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=8"></script>
 </body>
 </html>
