@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Lato:wght@400;700&display=swap">
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
     <header class="hero">
@@ -97,8 +97,8 @@
 
                     <div class="split split--zooms-left">
                         <div class="zooms">
-                            <figure class="art" data-full="uploads/web/luna.jpg"><img src="uploads/web/luna-rostro.jpg" alt="Moon elf, face detail" loading="lazy"></figure>
-                            <figure class="art" data-full="uploads/web/luna.jpg"><img src="uploads/web/luna-detalle.jpg" alt="Moon elf, hand and gold detail" loading="lazy"></figure>
+                            <figure class="art" data-full="uploads/web/luna-rostro.jpg"><img src="uploads/web/luna-rostro.jpg" alt="Moon elf, face detail" loading="lazy"></figure>
+                            <figure class="art" data-full="uploads/web/luna-detalle.jpg"><img src="uploads/web/luna-detalle.jpg" alt="Moon elf, hand and gold detail" loading="lazy"></figure>
                         </div>
                         <figure class="art split-main" data-full="uploads/web/luna.jpg"><img src="uploads/web/luna.jpg" alt="Moon elf portrait" loading="lazy"></figure>
                     </div>
@@ -108,8 +108,8 @@
                     <div class="split">
                         <figure class="art split-main" data-full="uploads/web/orbe.jpg"><img src="uploads/web/orbe.jpg" alt="Blue elf holding a glowing orb" loading="lazy"></figure>
                         <div class="zooms">
-                            <figure class="art" data-full="uploads/web/orbe.jpg"><img src="uploads/web/orbe-rostro.jpg" alt="Blue elf, face detail" loading="lazy"></figure>
-                            <figure class="art" data-full="uploads/web/orbe.jpg"><img src="uploads/web/orbe-detalle.jpg" alt="Blue elf, orb detail" loading="lazy"></figure>
+                            <figure class="art" data-full="uploads/web/orbe-rostro.jpg"><img src="uploads/web/orbe-rostro.jpg" alt="Blue elf, face detail" loading="lazy"></figure>
+                            <figure class="art" data-full="uploads/web/orbe-detalle.jpg"><img src="uploads/web/orbe-detalle.jpg" alt="Blue elf, orb detail" loading="lazy"></figure>
                         </div>
                     </div>
                     <div class="row row-2">
@@ -223,15 +223,24 @@
     </button>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="Enlarged">
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" aria-label="Close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+        <div class="lightbox-nav">
+            <button type="button" class="lightbox-prev" aria-label="Previous image">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <span id="lightbox-count" class="lightbox-count"></span>
+            <button type="button" class="lightbox-next" aria-label="Next image">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
     </div>
 
     <footer class="footer">
         <p>&copy; <span id="current-year"></span> Anne De Quevedo. All rights reserved.</p>
     </footer>
 
-    <script src="script.js?v=8"></script>
+    <script src="script.js?v=9"></script>
 </body>
 </html>

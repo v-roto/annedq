@@ -496,6 +496,8 @@ h1, h2 {
     -webkit-user-select: none;
     user-select: none;
     -webkit-touch-callout: none;
+    /* A finger on these images moves the lens instead of scrolling */
+    touch-action: none;
 }
 
 .reveal-item.revealing {
@@ -548,16 +550,15 @@ h1, h2 {
     opacity: 0;
 }
 
-/* Lightbox Modal */
+/* Lightbox: artwork at full screen width, arrows to browse */
 .lightbox {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(8, 12, 24, 0.94);
+    background: rgba(8, 8, 10, 0.96);
     z-index: 4000;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
 }
 
 .lightbox.active {
@@ -565,20 +566,68 @@ h1, h2 {
 }
 
 .lightbox img {
-    max-width: 92%;
-    max-height: 90vh;
+    width: 100vw;
+    height: 100vh;
     object-fit: contain;
-    border-radius: 5px;
 }
 
 .lightbox-close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 12px;
+    right: 22px;
+    z-index: 1;
     font-size: 3rem;
+    line-height: 1;
     color: white;
     cursor: pointer;
     font-weight: 300;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-nav {
+    position: absolute;
+    left: 50%;
+    bottom: 1.25rem;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.35rem;
+    border-radius: 999px;
+    background: rgba(20, 20, 24, 0.75);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(6px);
+}
+
+.lightbox-nav button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary-color);
+    color: var(--on-accent);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lightbox-nav button:hover {
+    background: var(--primary-hover);
+}
+
+.lightbox-nav svg {
+    width: 22px;
+    height: 22px;
+}
+
+.lightbox-count {
+    min-width: 4.5rem;
+    text-align: center;
+    color: var(--text-color);
+    font-family: var(--font-accent);
+    font-size: 1.05rem;
 }
 
 /* Modals (About + Contact) */

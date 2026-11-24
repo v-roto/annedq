@@ -127,31 +127,71 @@ if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
 }
 
-// Lightbox functionality
+// Lightbox: shows any artwork at full size; arrows, keyboard and swipes
+// move through every artwork on the page in order.
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCount = document.getElementById('lightbox-count');
+const artworks = [...document.querySelectorAll('.section-banner[data-full], .art[data-full]')];
+let lightboxIndex = 0;
+
+const showArtwork = (i) => {
+    lightboxIndex = (i + artworks.length) % artworks.length;
+    const art = artworks[lightboxIndex];
+    lightboxImg.src = art.dataset.full;
+    lightboxImg.alt = art.querySelector('img')?.alt || '';
+    lightboxCount.textContent = `${lightboxIndex + 1} / ${artworks.length}`;
+    // Warm up the neighbours so the arrows feel instant
+    [1, -1].forEach(d => { new Image().src = artworks[(lightboxIndex + d + artworks.length) % artworks.length].dataset.full; });
+};
 
 window.openLightbox = function(src) {
-    if (lightbox && lightboxImg) {
-        lightboxImg.src = src;
-        lightbox.classList.add('active');
-    }
+    if (!lightbox) return;
+    const i = artworks.findIndex(a => a.dataset.full === src);
+    showArtwork(i < 0 ? 0 : i);
+    lightbox.classList.add('active');
+    document.body.classList.add('no-scroll');
 };
 
 window.closeLightbox = function() {
-    if (lightbox) {
-        lightbox.classList.remove('active');
-    }
+    if (!lightbox || !lightbox.classList.contains('active')) return;
+    lightbox.classList.remove('active');
+    if (!document.querySelector('.modal-overlay.active')) document.body.classList.remove('no-scroll');
 };
 
-// Lightbox for every artwork (opens the image in data-full)
-document.querySelectorAll('.art[data-full], .section-banner[data-full]').forEach(art => {
-    art.addEventListener('click', () => openLightbox(art.dataset.full));
+artworks.forEach((art, i) => {
+    art.addEventListener('click', () => {
+        showArtwork(i);
+        lightbox.classList.add('active');
+        document.body.classList.add('no-scroll');
+    });
 });
 
+if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+        if (e.target.closest('.lightbox-prev')) showArtwork(lightboxIndex - 1);
+        else if (e.target.closest('.lightbox-next')) showArtwork(lightboxIndex + 1);
+        else if (e.target !== lightboxImg) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'ArrowLeft') showArtwork(lightboxIndex - 1);
+        if (e.key === 'ArrowRight') showArtwork(lightboxIndex + 1);
+    });
+    // Swipe left/right on phones
+    let startX = null;
+    lightbox.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    lightbox.addEventListener('touchend', (e) => {
+        if (startX === null) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 50) showArtwork(lightboxIndex + (dx < 0 ? 1 : -1));
+        startX = null;
+    }, { passive: true });
+}
+
 // Sketch reveal: on artworks with data-reveal, a lens follows the mouse —
-// or the finger on phones — and shows the sketch underneath. Touch listeners
-// are passive, so scrolling the page with the finger still works.
+// or the finger on phones — and shows the sketch underneath. While a finger
+// is on one of these images the page does not scroll (touch-action: none).
 document.querySelectorAll('.art[data-reveal]').forEach(item => {
     const sketch = new Image();
     sketch.className = 'reveal-img';
@@ -202,9 +242,10 @@ document.querySelectorAll('.art[data-reveal]').forEach(item => {
             show();
         }, { passive: true });
         item.addEventListener('touchmove', (e) => {
+            e.preventDefault();
             const t = e.touches[0];
             moveTo(t.clientX, t.clientY);
-        }, { passive: true });
+        }, { passive: false });
         item.addEventListener('touchend', hide, { passive: true });
         item.addEventListener('touchcancel', hide, { passive: true });
     };
